@@ -105,6 +105,7 @@ header .buttons i{
     display: flex;
     flex-direction: column;
     align-items: center;
+    overflow: hidden;
 }
 section.Profil-Section{
     width: 100%;
@@ -188,6 +189,7 @@ section.Infos li.Maps a i{
 }
 section.Infos .Navigation-Buttons{
     display: flex;
+    flex-wrap: wrap;
     gap: 20px;
     margin: 2vh 0px;
 }
@@ -210,6 +212,7 @@ section.Infos .Navigation-Buttons button#Language-Proficiency{
 
 .Proficiency .Languages{
     display: flex;
+    flex-wrap: wrap;
     margin-top: 4vh;
     justify-content: center;
     gap: 20px;
@@ -221,9 +224,14 @@ section.Infos .Navigation-Buttons button#Language-Proficiency{
     border-radius: 6px;
     display: flex;
     flex-direction: column;
+    flex-grow: 1;
     align-items: center;
     color: var(--bg-100);
+    animation: FadeLeft linear;
+    animation-timeline: view();
+    animation-range: entry 0% cover 30%;
 }
+
 .Proficiency progress{
     height: 3vh;
     color: var(--primary-100);
@@ -246,44 +254,139 @@ progress::-webkit-progress-value {
 
 /* ------------ My Skills Section ------------ */
 
-.Cards,
+.MySkills-Card:hover{
+    background-color: var(--accent-100);
+}
+.MySkills-Cards{
+    width: 100%;
+    flex-wrap: wrap;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    margin: 20px 0px;
+}
+.MySkills-Card{
+    padding: 60px;
+    border-radius: 6px;
+    color: white;
+    background-color: var(--accent-200);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex-grow: 1;
+}
+.Html, .Css{
+    animation: FadeLeft linear;
+    animation-timeline: view();
+    animation-range: entry 0% cover 20%;
+}
+.React-js, .Tailwind-css{
+    animation: FadeRight linear;
+    animation-timeline: view();
+    animation-range: entry 0% cover 20%;
+}
+.Javascript{
+    animation: FadeOut linear;
+    animation-timeline: view();
+    animation-range: entry 0% cover 20%;
+}
+.MySkills-Card i{
+    font-size: 4em;
+}
+/* ------------ My Additionnal Skills Section ------------ */
+.AddSkills-Cards{
+    width: 100%;
+    flex-wrap: wrap;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    margin: 20px 0px;
+}
+
+.AddSkills-Card:hover{
+    background-color: var(--primary-200);
+}
+.AddSkills-Card{
+    padding: 20px 60px;
+    border-radius: 6px;
+    color: white;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background-color: var(--primary-100);
+    text-align: center;
+    flex-grow: 1;
+}
+.AddSkills-Card i{
+    font-size: 4em;
+}
+.Wordpress{
+    animation: FadeLeft linear;
+    animation-timeline: view();
+    animation-range: entry 0% cover 20%;
+}
+.Github{
+    animation: FadeRight linear;
+    animation-timeline: view();
+    animation-range: entry 0% cover 20%;
+}
+.Git{
+    animation: FadeOut linear;
+    animation-timeline: view();
+    animation-range: entry 0% cover 20%;
+}
+@keyframes FadeLeft{
+    from{
+        opacity: 0;
+        transform: translateX(-100px);
+    }
+    to{
+        opacity: 1;
+        transform: translateX(0px);
+    }
+}
+
+@keyframes FadeIn{
+    from{
+        transform: scale(0.5);
+    }to{
+        transform: scale(1);
+    }
+}
+@keyframes FadeRight{
+    from{
+        opacity: 0;
+        transform: translateX(100px);
+    }
+    to{
+        opacity: 1;
+        transform: translateX(0px);
+    }
+}
+@keyframes FadeOut{
+    from{
+        opacity: 0;
+        transform: scale(3);
+    }
+    to{
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* ------------ My Projects Section ------------ */
+
 .Projects-Cards{
     width: 100%;
+    flex-wrap: wrap;
     display: flex;
     align-items: center;
     justify-content: center;
     gap: 40px;
     margin: 20px 0px;
-}
-.MySkills{
-    background-color: var(--accent-200);
-}
-.MySkills:hover{
-    background-color: var(--accent-100);
-}
-.AddSkills{
-    background-color: var(--primary-100);
-}
-.AddSkills:hover{
-    background-color: var(--primary-200);
-}
-.Cards .Card{
-    padding: 20px 60px;
-    border-radius: 6px;
-    color: white;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 4px;
-}
-.Cards .Card i{
-    font-size: 4em;
-}
-
-/*  */
-
-.Projects-Cards{
-    width: 100%;
 }
 .Projects-Cards .Project-Card{
     width: 300px;
@@ -375,20 +478,314 @@ footer p{
 .Dark .Projects-Cards .Project-Card{
     border: 1px solid #c7c0c042;
 }
-
-.Soon-Message{
-    color: var(--primary-100);
-    text-align: center;
-    width: 100%;
+#Menu-Bar{
+    color: white;
+    font-size: 1.2em;
+    cursor: pointer;
     display: none;
 }
+#Menu-Side-Bar{
+    width: 250px;
+    background: #000;
+    height: 100vh;
+    position: absolute;
+    top: 0;
+    right: 0;
+    transform: translateX(100%);
+}
+#Menu-Side-Bar h1{
+    font-size: 1.6em;
+}
+#Menu-Side-Bar i{
+    cursor: pointer;
+    font-size: 1.4em;
+}
+#Menu-Side-Bar .Top-Side-Bar{
+    display: flex;
+    justify-content: space-between;
+    padding: 4px 12px;
+    color: white;
+    align-items: center;
+}
+#Menu-Side-Bar ul{
+    display: flex;
+    flex-direction: column;
+}
+#Menu-Side-Bar ul button{
+    background-color: transparent;
+    padding: 10px 0px;
+    font-size: 1.2em;
+    border: none;
+    border-bottom: var(--border);
+    cursor: pointer;
+}
+#Menu-Side-Bar ul button:hover{
+    background-color: var(--primary-100);
+}
+@media screen and (min-width:300px) and (max-width:500px){
+    section.Profil-Section .Profil-Circle{
+        width: 180px;
+        height: 180px;
+        border-width: 2px;
+        bottom: -60px;
+        left: 50px;
+        box-shadow: 2px 0px 10px 1px #00000098;
+    }
+    section.Infos h1{
+        font-size: 1.6em;
+        text-wrap: nowrap;
+    }
+    section.Infos p{
+        width: 100%;
+    }
+    section.Infos .Title-Certificates{
+        gap: 10px; 
+    }
+    section.Infos .Title-Certificates .Certificats ul li{
+        padding: 0px 6px;
+    }
+    section.Infos .Navigation-Buttons{
+        gap: 8px;
+    }
+    section.Infos .Navigation-Buttons button{
+        flex-grow: 1;
+    }
+    .Proficiency .Languages{
+        gap: 4px;
+    }
+    .Proficiency .Language-Card{
+        padding: 6px;
+    }
+    .Proficiency progress{
+        height: 2vh;
+    }
 
-@media (max-width:1230px){
-    .LandingPage,
-    header,.Profil-Section{
+
+
+    .MySkills-Card:hover{
+        background-color: var(--accent-100);
+    }
+    .MySkills-Cards{
+        gap: 4px;
+    }
+    .MySkills-Card{
+        padding: 20px;
+        display: flex;
+        flex-direction: column;
+        flex-grow: 1;
+    }
+    .Tailwind-css{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    .Tailwind-css img{
+        width: 100px;
+    }
+
+
+    .AddSkills-Cards{
+        justify-content: space-between;
+        gap: 4px;
+    }
+    .AddSkills-Card:hover{
+        background-color: var(--primary-200);
+    }
+    .AddSkills-Card{
+        padding: 20px;
+    }
+
+
+    .Projects-Cards{
+        gap: 4px;
+    }
+    .Projects-Cards .Project-Card{
+        width: 160px;
+    }
+    .Card-Content{
+        padding: 0px 2px;
+    }
+    .Card-Content .Under-Content li a{
+        padding: 2px 6px;
+        font-size: 0.9em;
+    }
+    .Card-Content .Under-Content span{
+        font-size: 0.8em;
+    }
+    .Project-Image i#Loading{
+        font-size: 2em;
+        padding: 25px;
+        margin-inline: auto;
+        color: var(--text-200);
+    }
+    footer .Footer-Links{
+        gap: 12px;
+    }
+    
+    .Header-Links button,
+    .buttons a{
         display: none;
     }
-    .Soon-Message{
+    #Menu-Bar{
         display: block;
+    }
+    header .buttons i{
+        
+    }
+    #Menu-Side-Bar{
+        width: 100%;
+        background: #000000e5;
+    }
+    section.Profil-Section{
+        width: 100%;
+        height: 40vh;
+        position: relative;
+    }
+}
+@media screen and (min-width:501px) and (max-width:765px){
+    /* .Header-Links button,
+    .buttons a{
+        display: none;
+    }
+    #Menu-Bar{
+        display: block;
+    }
+    #Menu-Side-Bar{
+        width: 250px;
+        background: #000;
+    } */
+
+    section.Profil-Section .Profil-Circle{
+        width: 180px;
+        height: 180px;
+        border-width: 2px;
+        bottom: -60px;
+        left: 50px;
+        box-shadow: 2px 0px 10px 1px #00000098;
+    }
+    section.Infos h1{
+        font-size: 1.6em;
+        text-wrap: nowrap;
+    }
+    section.Infos p{
+        width: 100%;
+    }
+    section.Infos .Title-Certificates{
+        gap: 10px; 
+    }
+    section.Infos .Title-Certificates .Certificats ul li{
+        padding: 0px 6px;
+    }
+    section.Infos .Navigation-Buttons{
+        gap: 8px;
+    }
+    section.Infos .Navigation-Buttons button{
+        flex-grow: 1;
+    }
+    .Proficiency .Languages{
+        gap: 4px;
+    }
+    .Proficiency .Language-Card{
+        padding: 6px;
+    }
+    .Proficiency progress{
+        height: 2vh;
+    }
+
+
+
+    .MySkills-Card:hover{
+        background-color: var(--accent-100);
+    }
+    .MySkills-Cards{
+        gap: 4px;
+    }
+    .MySkills-Card{
+        padding: 20px;
+        display: flex;
+        flex-direction: column;
+        flex-grow: 1;
+    }
+    .Tailwind-css{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    .Tailwind-css img{
+        width: 100px;
+    }
+
+
+    .AddSkills-Cards{
+        justify-content: space-between;
+        gap: 4px;
+    }
+    .AddSkills-Card:hover{
+        background-color: var(--primary-200);
+    }
+    .AddSkills-Card{
+        padding: 20px;
+    }
+
+
+    .Projects-Cards{
+        gap: 4px;
+    }
+    .Projects-Cards .Project-Card{
+        width: 160px;
+    }
+    .Card-Content{
+        padding: 0px 2px;
+    }
+    .Card-Content .Under-Content li a{
+        padding: 2px 6px;
+        font-size: 0.9em;
+    }
+    .Card-Content .Under-Content span{
+        font-size: 0.8em;
+    }
+    .Project-Image i#Loading{
+        font-size: 2em;
+        padding: 25px;
+        margin-inline: auto;
+        color: var(--text-200);
+    }
+    footer .Footer-Links{
+        gap: 12px;
+    }
+    
+    .Header-Links button,
+    .buttons a{
+        display: none;
+    }
+    #Menu-Bar{
+        display: block;
+    }
+    header .buttons i{
+        
+    }
+    #Menu-Side-Bar{
+        width: 100%;
+        background: #000000e5;
+    }
+    section.Profil-Section{
+        width: 100%;
+        height: 40vh;
+        position: relative;
+    }
+}
+@media screen and (min-width:765px) and (max-width:1080px){
+    .Header-Links button,
+    .buttons a{
+        display: none;
+    }
+    #Menu-Bar{
+        display: block;
+    }
+    #Menu-Side-Bar{
+        width: 250px;
+        background: #000;
     }
 }

@@ -7,7 +7,7 @@ let MyProjects = document.querySelectorAll("#MyProjects");
 let ContactMe = document.querySelectorAll("#ContactMe");
 let scrollToTop = document.getElementById("Scroll-To-Top");
 let Moon = document.getElementById("Moon");
-
+let MenuSideBar = document.getElementById("Menu-Side-Bar");
 
 scrollToTop.addEventListener("click", function () {
     scrollTo({
@@ -75,5 +75,11 @@ Moon.addEventListener("click", function(){
     });
 })
 
-// 
-
+function HideMenu(){
+    MenuSideBar.style.transform = "translateX(100%)";
+    MenuSideBar.style.transition = ".3s linear";
+}
+function ShowMenu(){
+    MenuSideBar.style.transform = "translateX(0%)";
+    MenuSideBar.style.transition = ".3s linear";
+}

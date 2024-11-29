@@ -23,7 +23,23 @@
         <div class="buttons">
             <a href="https://www.linkedin.com/in/mostafa-jaafari-7246321b3/" target="_blank"><i id="LinkedIn" class="fa-brands fa-linkedin"></i> LinkedIn</a>
             <a href="https://github.com/mostafa-jaafari" target="_blank"><i id="GitHub" class="fa-brands fa-github"></i> Github</a>
-                <i id="Moon" class="fa-solid fa-moon"></i>
+            <i id="Moon" class="fa-solid fa-moon"></i>
+            <i onclick="ShowMenu()" id="Menu-Bar" class="fa-solid fa-bars"></i>
+        </div>
+        
+        <div id="Menu-Side-Bar">
+            <div class="Top-Side-Bar">
+                <h1>Menu</h1>
+                <i onclick="HideMenu()" class="fa-solid fa-xmark"></i>
+            </div>
+            <hr/>
+            <ul>
+                <button id="About-Me" href="#">About Me</button>
+                <button id="Language-Proficiency" href="#">Proficiency</button>
+                <button id="MySkills" href="#">Skills</button>
+                <button id="Additionnal-Skills" href="#">Add Skills</button>
+                <button id="MyProjects" href="#">Projects</button>
+            </ul>
         </div>
     </header>
 
@@ -104,28 +120,28 @@
         <!-- ----------- My Skills Section ----------- -->
         <section class="Container">
             <h2 class="Title">My Skills</h2>
-            <div class="Cards">
-                <div class="Card MySkills">
+            <div class="MySkills-Cards">
+                <div class="MySkills-Card Html">
                     <i class="fa-brands fa-html5"></i>
                     <b>Html</b>
                 </div>
 
-                <div class="Card MySkills">
+                <div class="MySkills-Card Css">
                     <i class="fa-brands fa-css3-alt"></i>
                     <b>Css</b>
                 </div>
 
-                <div class="Card MySkills">
+                <div class="MySkills-Card Javascript">
                     <i class="fa-brands fa-js"></i>
                     <b>Js</b>
                 </div>
 
-                <div class="Card MySkills">
+                <div class="MySkills-Card React-js">
                     <i class="fa-brands fa-react"></i>
                     <b>React Js</b>
                 </div>
 
-                <div class="Card MySkills">
+                <div class="MySkills-Card Tailwind-css">
                     <img src="Tailwind.png" width="100" alt="">
                     <b>Tailwind</b>
                 </div>
@@ -136,18 +152,18 @@
         <!-- ----------- My Additionnal Skills Section ----------- -->
         <section class="Container">
             <h2 class="Title">Additionnal Skills</h2>
-            <div class="Cards">
-                <div class="Card AddSkills">
+            <div class="AddSkills-Cards">
+                <div class="AddSkills-Card Wordpress">
                     <i class="fa-brands fa-wordpress"></i>
                     <b>Wordpress</b>
                 </div>
 
-                <div class="Card AddSkills">
+                <div class="AddSkills-Card Git">
                     <i class="fa-brands fa-git-alt"></i>
                     <b>Git</b>
                 </div>
 
-                <div class="Card AddSkills">
+                <div class="AddSkills-Card Github">
                     <i class="fa-brands fa-github"></i>
                     <b>GitHub</b>
                 </div>
@@ -155,6 +171,7 @@
         </section>
 
 
+        <!-- ----------- My Projects Section ----------- -->
         <section class="Container">
             <h2 class="Title">My Projects</h2>
             <div class="Projects-Cards">
@@ -221,6 +238,7 @@
             </div>
         </section>
 
+        <!-- ----------- Footer Section ----------- -->
         <footer>
             <div class="Logo">Mostafa</div>
 
@@ -240,29 +258,9 @@
             <p>&copy; 2024 Mostafa. All rights reserved.</p>
         </footer>
         
-        
-        
-
-
-
-
-
-
-
-
-
-
-
-
         <div id="Scroll-To-Top">
             <i class="fa-solid fa-circle-arrow-up"></i>
         </div>
-    </div>
-
-
-    <div class="Soon-Message">
-        <h1>Sorry, The responsive design will be implemented soon..., 
-            ensuring a seamless experience across all devices.</h1>
     </div>
     
     <script src="script.js"></script>
