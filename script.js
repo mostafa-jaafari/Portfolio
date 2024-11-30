@@ -53,7 +53,7 @@ Myskill.addEventListener("click", function(){
 Add_Skills.forEach(function(skill){
     skill.addEventListener("click", function(){
         scrollTo({
-            top:1030,
+            top:1156,
             behavior:"smooth"
         })
     })
@@ -61,7 +61,7 @@ Add_Skills.forEach(function(skill){
 MyProjects.forEach(function(Project){
 Project.addEventListener("click", function(){
     scrollTo({
-        top:1315,
+        top:1615,
         behavior:"smooth"
     })
 })
@@ -81,5 +81,9 @@ function HideMenu(){
 }
 function ShowMenu(){
     MenuSideBar.style.transform = "translateX(0%)";
+    MenuSideBar.style.transition = ".3s linear";
+}
+function $HideMenu(){
+    MenuSideBar.style.transform = "translateX(100%)";
     MenuSideBar.style.transition = ".3s linear";
 }
