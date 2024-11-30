@@ -155,7 +155,7 @@ section.Infos .Title-Certificates .Certificats ul{
     align-items: center; 
 }
 section.Infos .Title-Certificates{
-    gap: 30px; 
+    gap: 30px;
 }
 section.Infos .Title-Certificates .Certificats ul{
     gap: 6px;
@@ -224,7 +224,6 @@ section.Infos .Navigation-Buttons button#Language-Proficiency{
     border-radius: 6px;
     display: flex;
     flex-direction: column;
-    flex-grow: 1;
     align-items: center;
     color: var(--bg-100);
     animation: FadeLeft linear;
@@ -384,14 +383,15 @@ progress::-webkit-progress-value {
     flex-wrap: wrap;
     display: flex;
     align-items: center;
-    justify-content: center;
-    gap: 40px;
-    margin: 20px 0px;
+    justify-content: space-between;
+    gap: 4px;
+    margin-top: 20px;
 }
 .Projects-Cards .Project-Card{
-    width: 300px;
+    width:250px;
     border-radius: 6px;
     overflow: hidden;
+    flex-grow: 1;
     border: 1px solid var(--border);
 }
 .Projects-Cards .Project-Card .Project-Image img{
@@ -417,16 +417,11 @@ progress::-webkit-progress-value {
     max-width: 60%;
     color: var(--accent-100);
 }
-.Projects-Cards .Project-Card{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-}
 .Project-Image i#Loading{
     font-size: 4em;
-    padding: 28px;
-    margin-inline: auto;
+    padding: 35px;
+    display: flex;
+    justify-content: center;
     color: var(--text-200);
 }
 #Disabled{
@@ -523,14 +518,22 @@ footer p{
     background-color: var(--primary-100);
 }
 @media screen and (min-width:300px) and (max-width:500px){
+    header{
+        padding: 6px 30px;
+    }
     section.Profil-Section .Profil-Circle{
-        width: 180px;
-        height: 180px;
+        width: 150px;
+        height: 150px;
         border-width: 2px;
-        bottom: -60px;
-        left: 50px;
+        bottom: -70px;
+        left: 30px;
         box-shadow: 2px 0px 10px 1px #00000098;
     }
+    section.Infos .Title-Certificates,
+section.Infos .Title-Certificates .Certificats ul{
+    flex-direction: column;
+    align-items: start;
+}
     section.Infos h1{
         font-size: 1.6em;
         text-wrap: nowrap;
@@ -542,7 +545,7 @@ footer p{
         gap: 10px; 
     }
     section.Infos .Title-Certificates .Certificats ul li{
-        padding: 0px 6px;
+        padding: 2px 10px;
     }
     section.Infos .Navigation-Buttons{
         gap: 8px;
@@ -554,10 +557,12 @@ footer p{
         gap: 4px;
     }
     .Proficiency .Language-Card{
-        padding: 6px;
+        padding: 20px;
+        flex-grow: 1;
     }
     .Proficiency progress{
         height: 2vh;
+        width: 100%;
     }
 
 
@@ -596,25 +601,18 @@ footer p{
         padding: 20px;
     }
 
-
-    .Projects-Cards{
-        gap: 4px;
-    }
     .Projects-Cards .Project-Card{
-        width: 160px;
+        flex-grow: 1;
     }
     .Card-Content{
-        padding: 0px 2px;
+        padding: 0px 0px;
     }
     .Card-Content .Under-Content li a{
-        padding: 2px 6px;
+        padding: 7px 21px;
         font-size: 0.9em;
     }
-    .Card-Content .Under-Content span{
-        font-size: 0.8em;
-    }
     .Project-Image i#Loading{
-        font-size: 2em;
+        font-size: 4em;
         padding: 25px;
         margin-inline: auto;
         color: var(--text-200);
@@ -639,8 +637,7 @@ footer p{
     }
     section.Profil-Section{
         width: 100%;
-        height: 40vh;
-        position: relative;
+        height: 30vh;
     }
 }
 @media screen and (min-width:501px) and (max-width:765px){
@@ -686,8 +683,8 @@ footer p{
     .Proficiency .Languages{
         gap: 4px;
     }
-    .Proficiency .Language-Card{
-        padding: 6px;
+    .Proficiency{
+        display: flex;
     }
     .Proficiency progress{
         height: 2vh;
